@@ -23,6 +23,10 @@ jobs:
           npm install -g cordova  # Устанавливаем Cordova глобально
           npm install  # Устанавливаем зависимости проекта
 
+      - name: Add Android platform
+        run: |
+          cordova platform add android  # Добавляем платформу Android
+
       - name: Build Android app
         run: cordova build android  # Строим приложение для Android
 
