@@ -27,8 +27,7 @@ jobs:
         run: cordova build android  # Строим приложение для Android
 
       - name: Upload APK artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3  # Обновляем до актуальной версии v3
         with:
           name: cordova-app-apk
           path: platforms/android/build/outputs/apk/release/app-release-unsigned.apk  # Путь к APK
-
