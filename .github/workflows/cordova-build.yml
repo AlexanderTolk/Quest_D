@@ -25,3 +25,4 @@ jobs:
 
       - name: Build Android app
         run: cordova build android  # Строим приложение для Android
+        
