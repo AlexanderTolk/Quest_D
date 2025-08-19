@@ -1,0 +1,30 @@
+name: Build Cordova App
+
+on:
+  push:
+    branches:
+      - main  # Работать будет при пушах в главную ветку
+  pull_request:
+    branches:
+      - main  # Также будет работать при PR в main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Будет запускаться на Ubuntu
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2  # Получаем код из репозитория
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # Указываем версию Node.js (можно выбрать другую)
+
+      - name: Install dependencies
+        run: |
+          npm install -g cordova  # Устанавливаем Cordova глобально
+          npm install  # Устанавливаем зависимости проекта
+
+      - name: Build Android app
+        run: cordova build android  # Строим приложение для Android
