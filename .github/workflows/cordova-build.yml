@@ -34,5 +34,5 @@ jobs:
         uses: actions/upload-artifact@v4  # Обновлено на версию v4
         with:
           name: cordova-app-apk
-          path: platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk  # Путь к APK для релиза
+          path: Quest_D/www/app-release-unsigned.apk  # Путь к APK для релиза
 
