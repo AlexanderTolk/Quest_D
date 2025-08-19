@@ -28,11 +28,11 @@ jobs:
           cordova platform add android  # Добавляем платформу Android
 
       - name: Build Android app
-        run: cordova build android  # Строим приложение для Android
+        run: cordova build android --release  # Строим приложение для Android с флагом --release для релиза
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4  # Обновлено на версию v4
         with:
           name: cordova-app-apk
-          path: platforms/android/build/outputs/apk/release/app-release-unsigned.apk  # Путь к APK
+          path: platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk  # Путь к APK для релиза
 
