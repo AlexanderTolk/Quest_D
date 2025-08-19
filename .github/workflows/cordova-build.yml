@@ -27,9 +27,14 @@ jobs:
         run: |
           cordova platform add android  # Добавляем платформу Android
 
-      - name: Prepare directories for APK
+      - name: Create directories for APK (if not exists)
         run: |
-          mkdir -p platforms/android/app/build/outputs/apk/release  # Создаем директорию для APK, если её нет
+          if [ ! -d "platforms/android/app/build/outputs/apk/release" ]; then  # Проверяем, существует ли директория
+            mkdir -p platforms/android/app/build/outputs/apk/release  # Если не существует, создаем её
+            echo "Directory created: platforms/android/app/build/outputs/apk/release"
+          else
+            echo "Directory already exists: platforms/android/app/build/outputs/apk/release"
+          fi
 
       - name: Build Android app
         run: |
@@ -57,5 +62,4 @@ jobs:
           git push origin main  # Пушим APK в репозиторий
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Для авторизации на GitHub
-
 
