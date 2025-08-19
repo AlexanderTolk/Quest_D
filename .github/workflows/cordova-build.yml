@@ -27,12 +27,35 @@ jobs:
         run: |
           cordova platform add android  # Добавляем платформу Android
 
+      - name: Prepare directories for APK
+        run: |
+          mkdir -p platforms/android/app/build/outputs/apk/release  # Создаем директорию для APK, если её нет
+
       - name: Build Android app
-        run: cordova build android --release  # Строим приложение для Android с флагом --release для релиза
+        run: |
+          cordova prepare android  # Подготовка проекта для Android
+          cordova build android --release  # Строим приложение для Android с флагом --release для релиза
+
+      - name: List APK files
+        run: |
+          ls platforms/android/app/build/outputs/apk/release  # Проверим, что есть APK
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4  # Обновлено на версию v4
         with:
           name: cordova-app-apk
-          path: Quest_D/www/app-release-unsigned.apk  # Путь к APK для релиза
+          path: platforms/android/app/build/outputs/apk/release/*.apk  # Загрузим все APK
+
+      - name: Commit APK to GitHub repository
+        run: |
+          cd platforms/android/app/build/outputs/apk/release
+          mv app-release-unsigned.apk ../../../../../../../  # Перемещаем файл на уровень выше
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add app-release-unsigned.apk  # Добавляем APK в индекс git
+          git commit -m "Add APK file to repository"
+          git push origin main  # Пушим APK в репозиторий
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Для авторизации на GitHub
+
 
