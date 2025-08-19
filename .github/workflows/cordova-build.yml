@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'  # Указываем версию Node.js
+          node-version: '16'  # Указываем версию Node.js 16 или выше
 
       - name: Install dependencies
         run: |
@@ -35,3 +35,4 @@ jobs:
         with:
           name: cordova-app-apk
           path: platforms/android/build/outputs/apk/release/app-release-unsigned.apk  # Путь к APK
+
