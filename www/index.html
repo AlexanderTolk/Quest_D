@@ -15,6 +15,7 @@
         <button id="new-game">Начать новую игру</button>
         <button id="continue-game" style="display: none;">Продолжить игру</button>
         <button id="load-game">📁 Загрузить из файла</button>
+        <button id="support-us">❤️ Поддержать нас</button>
         
         <!-- Скрытый input для загрузки файлов -->
         <input type="file" id="file-input" accept=".json,.gamesave" style="display: none;">
@@ -55,5 +56,14 @@
     </audio>
 
     <script type="module" src="js/script.js"></script>
+    <script>
+        // Обработчик для кнопки "Поддержать нас"
+        document.addEventListener('DOMContentLoaded', function() {
+            const supportButton = document.getElementById('support-us');
+            supportButton.addEventListener('click', function() {
+                window.open('https://pay.cloudtips.ru/p/ad07f50c', '_blank');
+            });
+        });
+    </script>
 </body>
 </html>
