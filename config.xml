@@ -1,7 +1,7 @@
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.kchristelke.kchristelke200825" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>К Христовой ёлке</name>
     <description>Текстовый квест по мотивам произведения Ф.М. Достоевского: "Мальчик у Христа на елке". </description>
-    <author email="dev@cordova.apache.org" href="https://cordova.apache.org">
+    <author email="alexander1005@mail.ru" href="https://cordova.apache.org">
         Apache Cordova Team
     </author>
 
