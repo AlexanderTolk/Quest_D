@@ -1,6 +1,10 @@
 {
   "name": "com.kchristelke.kchristelke200825",  
+<<<<<<< HEAD
   "displayName": "К Христовой Елке", 
+=======
+  "displayName": "К Христовой Елке",  
+>>>>>>> 6947c149b95e90a1fc9af9875dd8b237d394fdc1
   "version": "1.0.0",
   "description": "A quest game 'К Христовой Елке', created using Apache Cordova that responds to the deviceready event.",
   "main": "index.js",
