@@ -1,10 +1,6 @@
 {
-<<<<<<< HEAD
-  "name": "com.kchristelke.kchristelke200825",
-=======
-  "name": "K chtist elke",
->>>>>>> 664e92199462178aa22182338c0a9ddf807f2082
-  "displayName": "К Христовой Елке",
+  "name": "com.kchristelke.kchristelke200825",  // Пакет приложения (должен быть уникальным)
+  "displayName": "К Христовой Елке",  // Название, которое отображается на устройстве
   "version": "1.0.0",
   "description": "A quest game 'К Христовой Елке', created using Apache Cordova that responds to the deviceready event.",
   "main": "index.js",
